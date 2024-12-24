@@ -48,12 +48,13 @@
   loadpage('./results/main.html');
   //建立一個函式loadpage(page)用來載入內容至content區塊中
   function loadpage(url) {
-    // 使用jaQuery的$.get()函示載入指定的網頁內容
-    $.get(url, function (date) {
+    //使用jQuery的$.get()函式載入指定的網頁內容
+
+    $.get(url, function (data) {
       $(".content").html(data);
     })
-  }
 
+  }
 
 
 </script>
