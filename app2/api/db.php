@@ -160,3 +160,5 @@ function dd($array){
 function to($url){
     header("location:$url");
 }
+
+$Stu=new DB('students');
