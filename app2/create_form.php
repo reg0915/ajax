@@ -8,16 +8,33 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="uni_id" class="form-lable"></label>
-                    <input type="text" class="form-control" id="seat_num">
-
+                    <label for="uni_id" class="form-label">學號</label>
+                    <input type="text" class="form-control" id="uni_id">
                 </div>
+                <div class="mb-3">
+                    <label for="seat_num" class="form-label">座號</label>
+                    <input type="text" class="form-control" id="seat_num">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">姓名</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="mb-3">
+                    <label for="classroom" class="form-label">班級</label>
+                    <input type="text" class="form-control" id="classroom">
+                </div>
+                <div class="mb-3">
+                    <label for="major" class="form-label">科系</label>
+                    <input type="text" class="form-control" id="major">
+                </div>
+            </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-                <button type="button" class="btn btn-primary">儲存</button>
-            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+            <button type="button" class="btn btn-primary">儲存</button>
         </div>
     </div>
+</div>
 </div>
