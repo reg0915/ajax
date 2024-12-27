@@ -117,41 +117,44 @@
       </tr>`;
         $("#students").append(row);
       })
-      //     $(".edit").on("click", function () {
-      //       let id = $(this).data("id");
-      //       getEditForm(id);
-      //     })
+      $(".edit").on("click", function () {
+        let id = $(this).data("id");
+        getEditForm(id);
+      })
 
 
-      //   })
-      // }
+    })
+  }
 
-      // // 取得編輯資料表單內容
-      // function getEditForm(id) {
-      //   $.get("./edit_form.php", { id }, function (html) {
+  // 取得編輯資料表單內容
 
-      //   })
-      // }
+  function getEditForm(id) {
+    $.get("./edit_form.php", { id }, function (html) {
+
+      $("#modal").html(html);
+      let EditModal = new bootstrap.Modal('#EditModal');
+      EditModal.show();
+    })
+  }
 
 
 
+  //編輯資料的函式
+  function update() {
 
-      //編輯資料的函式
-      function update() {
+  }
 
-      }
+  //刪除資料的函式
+  function del(id, btn) {
+    let chk = confirm('確定要刪除嗎?');
+    if (chk) {
+      $.post('./api/delete.php', { id }, function () {
+        // console.log(res);
+        // query(res);
+        $(btn).parents('tr').remove();
+      })
 
-      //刪除資料的函式
-      function del(id, btn) {
-        let chk = confirm('確定要刪除嗎?');
-        if (chk) {
-          $.post('./api/delete.php', { id }, function () {
-            // console.log(res);
-            // query(res);
-            $(btn).parents('tr').remove();
-          })
-
-        }
-      }
+    }
+  }
 
 </script>
