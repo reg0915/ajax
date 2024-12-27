@@ -57,7 +57,7 @@
     $.get("./api/get_classes.php", function (classes) {
       console.log(classes)
       let data = JSON.parse(classes);
-      $("#classesList").html('');
+      $
       // console.log(data);
       data.forEach(function (item, idx) {
         let c = `<li class="nav-item">
@@ -65,8 +65,12 @@
              </li>`
         $("#classesList").append(c);
 
-        query(data[0].classroom);
+        if ($("#students").html() == '') {
+          query(data[0].classroom);
+        }
+
       })
+
     })
   }
 
@@ -82,6 +86,7 @@
 
   //查詢資料的函式
   function query(code) {
+    console.log(code)
     $.get("./api/query.php", { code }, function (students) {
       let data = JSON.parse(students)
       // console.log(data)
@@ -126,13 +131,15 @@
     })
   }
 
+  let EditModal
   // 取得編輯資料表單內容
 
   function getEditForm(id) {
     $.get("./edit_form.php", { id }, function (html) {
 
       $("#modal").html(html);
-      let EditModal = new bootstrap.Modal('#EditModal');
+
+      EditModal = new bootstrap.Modal('#EditModal');
       EditModal.show();
     })
   }
